@@ -25,7 +25,10 @@ SECRET_KEY = 'django-insecure-t1a78_xvv38(p5!!hfj0ns5-qde2%4p8yqauq8po%2+0gokf+5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# SECURITY WARNING: In production, allow only those domains which you trust.
+ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
+CORS_ALLOW_ALL_ORIGINS: True
 
 
 # Application definition
@@ -37,6 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app',
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -47,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'drt.urls'
@@ -80,6 +87,21 @@ DATABASES = {
     }
 }
 
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': '{db-name}',
+#         'USER': '{yourusername}',
+#         'PASSWORD': '{yourpassword}',
+#         'HOST': '{db-server-name}.database.windows.net',
+#         'PORT': '{port}',
+
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 18 for SQL Server',
+#         },
+#     },
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
