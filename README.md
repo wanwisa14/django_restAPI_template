@@ -5,8 +5,14 @@ Template for restAPI in Django Python
 ## Set Python environment
 
 ```
+For Mac/Linux
 python3 -m venv .venv
 source .venv/bin/activate
+
+For Windows
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+
+.\.venv\Scripts\activate
 ```
 
 ## Check current Python path
