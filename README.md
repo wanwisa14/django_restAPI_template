@@ -5,14 +5,8 @@ Template for restAPI in Django Python
 ## Set Python environment
 
 ```
-For Mac/Linux
 python3 -m venv .venv
 source .venv/bin/activate
-
-For Windows
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
-
-.\.venv\Scripts\activate
 ```
 
 ## Check current Python path
@@ -48,12 +42,4 @@ HOMEBREW_ACCEPT_EULA=Y brew install msodbcsql18 mssql-tools18
 
 ```
 msiexec /i msodbcsql.msi ADDLOCAL=ALL
-```
-
-## Deployment
-
-```
-In settings.py set Debug = False
-Then run command
-python manage.py collectstatic
 ```
