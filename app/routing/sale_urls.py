@@ -7,6 +7,6 @@ class SaleUrls():
         path('sales/', SaleList.as_view(), name='store_list'),
         path('sales/<int:store_id>/',
              SaleDetailUpdateDelete.as_view(), name='store_detail'),
-        path('stores/deleteAll/', SaleDeleteAll.as_view(),
+        path('sales/deleteAll/', SaleDeleteAll.as_view(),
              name='store_delete_all'),
     ]
